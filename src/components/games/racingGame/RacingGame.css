@@ -1,0 +1,322 @@
+.game-container {
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #fbecdc;
+
+  .game-board {
+    min-width: 100%;
+    min-height: 70vh;
+    max-height: fit-content;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  .control-board {
+    min-height: 22vh;
+    min-width: 100%;
+    padding: 10px 10px;
+    background-color: #eb3c4a;
+
+
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .winner {
+        border: 2px solid gold !important;
+        animation: winnerEffect 1s infinite;
+        opacity: 1;
+      }
+
+      .player-avatar {
+        transition: all 2s ease, opacity 1s ease;
+      }
+    }
+
+    .middle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .dice {
+        width: 50%;
+        height: 90%;
+        padding: 50px;
+        background-color: #fbecdc;
+        box-shadow: 0 15px 25px rgba(92, 84, 84, 0.15);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        /* child component */
+        .dice-btn {
+          background-color: #eb3c4a;
+          border: none;
+          outline: none;
+          color: #ffffff;
+          padding: 15px 0;
+          width: 150px;
+          letter-spacing: 1px;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+
+        .dice-btn:hover {
+          background-color: #ff0015;
+          scale: 1.1;
+        }
+
+        .dice-btn:active {
+          transform: scale(0.9);
+          background-color: #ff0015 !important;
+        }
+      }
+
+
+    }
+
+    .shake {
+      animation: shake 0.8s infinite !important;
+    }
+
+
+    .right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #f5f1f1;
+      font-family: "Sorts Mill Goudy", serif;
+    }
+
+
+
+  }
+}
+
+
+
+
+
+/* Keyframe stayout */
+
+@keyframes shake {
+  0% {
+    transform: rotate(8deg);
+  }
+
+  50% {
+    transform: rotate(-8deg);
+  }
+
+  100% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes winnerEffect {
+  0% {
+    transform: scale(1);
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: scale(1.1);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: scale(1);
+    transform: translateY(0);
+  }
+}
+
+/* ---------board style--------- */
+.board {
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-gap: 0px;
+  margin: 10px auto;
+  width: 500px;
+  min-width: 100%;
+  z-index: 0;
+}
+
+.cell {
+  min-width: 65px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  overflow: visible;
+  justify-content: center;
+  border-top: 2px solid #849203;
+  border-bottom: 2px solid #849203;
+  transition: background-color 0.5s ease;
+  z-index: 0 !important;
+
+
+  .avatar {
+    width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border: 2px solid #155804;
+    border-radius: 50%;
+    margin: 10px;
+    opacity: 5;
+  }
+}
+
+
+.cell:nth-child(odd) {
+  opacity: 0.9;
+  background-color: #f5f1f1;
+}
+
+.cell:nth-child(even) {
+  background-color: #c6cac6;
+  color: #fff;
+}
+
+
+.cell.active {
+  transition: all 3s ease-in;
+}
+
+/* Special cells with background image */
+.cell:nth-child(21) {
+  background: url('../../../images/spin.png') no-repeat center center;
+  background-size: contain;
+}
+
+.cell:nth-child(47) {
+  background: url('../../../images/spin.png') no-repeat center center;
+  background-size: contain;
+}
+
+
+.sign {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(211, 207, 7);
+  background-color: #16b41b;
+  border-radius: 50%;
+  margin-left: 30px;
+}
+
+.start {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.goal {
+  background: linear-gradient(270deg, rgb(22, 148, 10), rgb(155, 200, 30));
+  background-size: 400% 400%;
+  animation: gradientAnimation 2s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+    scale: 1;
+  }
+
+  50% {
+    background-position: 100% 50%;
+    scale: 1.1;
+  }
+
+  100% {
+    background-position: 0% 50%;
+    scale: 1;
+  }
+}
+
+/* --------- spin wheel---------- */
+.spin-wrapper {
+  width: 90%;
+  max-width: 34.37em;
+  max-height: 90vh;
+  background-color: #ffffff;
+  padding: 3em;
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+  margin-right: 10px;
+}
+
+.spin-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#wheel {
+  max-height: inherit;
+  width: inherit;
+  top: 0;
+  padding: 0;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#spin-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  height: 26%;
+  width: 26%;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 0;
+  background: radial-gradient(#fdcf3b 50%, #d88a40 85%);
+  color: #c66e16;
+  text-transform: uppercase;
+  font-size: 1.8em;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+#spin-btn:hover {
+  background: radial-gradient(#cca730 50%, #db7a1e 85%);
+}
+
+.spin-img {
+  position: absolute;
+  width: 4em;
+  top: 45%;
+  right: -8%;
+}
+
+#final-value {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 1.5em;
+  color: #202020;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .spin-wrapper {
+    font-size: 12px;
+  }
+
+  .spin-img {
+    right: -5%;
+  }
+}

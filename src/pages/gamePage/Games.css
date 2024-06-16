@@ -1,0 +1,101 @@
+.game-page {
+    max-width: 100%;
+    overflow: hidden;
+    background-color: #fbecdc;
+
+    .game-container {
+        min-height: 100vh;
+        padding: 20px 20px;
+        color: #fa5537;
+
+        h2{
+            font-family: "Sorts Mill Goudy", serif;
+            color: #fa5537;
+            font-size: 58px;
+            font-weight: 800;
+        }
+
+        .all-games {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+
+
+            .game-poster {
+                width: 400px;
+                min-height: 500px;
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0px 20px;
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                flex-direction: column;
+                border-radius: 8px;
+
+                .play-btn {
+                    font-weight: 600;
+                    border: 2px solid #fa5638;
+                    padding: 5px 20px 0px 20px;
+                    min-width: 50%;
+                    max-height: 50px;
+                    background-color: #fa5638;
+                    transition: color 0.4s linear;
+                    position: relative;
+                    z-index: 51;
+                    transform: translateY(-30%);
+            
+                    p {
+                        color:#fbecdc;
+                        font-weight: 500;
+                        font-size: 24px;
+                        text-decoration: none;
+                        transition: color 0.4s linear;
+                    }
+            
+                }
+            
+                .play-btn:hover {
+            
+                    p{
+                        color:  #fa5638;
+
+                    }
+                }
+            
+                .play-btn::before{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fbecdc;
+                    z-index: -1;
+                    transition: transform 0.5s;
+                    transform-origin: 0 0;
+                    transition-timing-function: cubic-bezier(0.5, 1.6,0.4,0.7);
+                    transform: scaleY(0);
+                    transition: transform 0.4s linear;
+                }
+            
+                .play-btn:hover::before{
+                    transform: scaleY(1);
+                }
+            }
+
+            .word-game {
+                background-image: url('https://www.imgag.com/product/cardstore/3418587/thumb_dpi1020.jpg');
+            }
+
+            .racing-game {
+                background-image: url('https://images.squarespace-cdn.com/content/v1/56c012fd27d4bddbb1776058/1575147231393-8GEI2O9NRSRCMKLM5TRV/twitch_600x800.jpg');
+            }
+
+            .drawing-game {
+                background-image: url('https://th.bing.com/th/id/OIP.qfs12CZsLZqOq9vOgFzHKwHaJX?w=949&h=1200&rs=1&pid=ImgDetMain');
+            }
+        }
+    }
+}

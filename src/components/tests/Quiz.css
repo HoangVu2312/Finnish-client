@@ -1,0 +1,145 @@
+/* Quiz.css */
+
+.quiz-model {
+  color: #fa5638;
+  min-height: fit-content;
+  font-size: 18px;
+
+  h4 {
+    font-family: "Sorts Mill Goudy", serif;
+    font-weight: 800;
+    font-size: 28px;
+  }
+
+  button {
+    font-weight: 600;
+    border: 2px solid #fa5638;
+    padding: 5px 40px;
+    transition: color 0.4s linear;
+    position: relative;
+    color: #fa5638;
+    font-size: 22px;
+    z-index: 5;
+
+  }
+
+  button:hover {
+    color: #fbecdc;
+  }
+
+  button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fa5537;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleY(0);
+    transition: transform 0.4s linear;
+  }
+
+  button:hover::before {
+    transform: scaleY(1);
+  }
+
+}
+
+.quiz-wrapper {
+  text-align: center;
+  margin: 20px;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-color: aquamarine;
+
+  h4 {
+    font-family: "Sorts Mill Goudy", serif;
+    font-size: 18px;
+    color: #fa5537;
+    font-weight: 600;
+  }
+}
+
+.timer {
+  font-size: 1.5em;
+  margin-right: auto;
+}
+
+.score {
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+.modal-backdrop.show {
+  z-index: 1050;
+  /* Increase the z-index */
+}
+
+
+
+
+
+/* Create quiz */
+.create-quiz-model {
+  border: 1px solid red;
+  font-family: "Sorts Mill Goudy", serif;
+  font-size: 18px;
+  color: #fa5537;
+  font-weight: 600;
+
+  /* all buttons */
+  button {
+    font-weight: 600;
+    border: 2px solid #fa5638;
+    margin-top: 5px;
+    padding: 5px 20px;
+    background-color: #fbecdc;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 51;
+    color: #fa5537;
+    transition: color 0.4s linear;
+
+    p {
+      color: #fa5537;
+      font-weight: 500;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.4s linear;
+    }
+
+  }
+
+  button:hover {
+    color: #fbecdc;
+
+    p {
+      color: #fbecdc;
+    }
+  }
+
+  button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fa5537;
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+    transform: scaleY(0);
+    transition: transform 0.4s linear;
+  }
+
+  button:hover::before {
+    transform: scaleY(1);
+  }
+}

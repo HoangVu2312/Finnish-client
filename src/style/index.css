@@ -1,0 +1,16 @@
+@import '~@fontsource/kaushan-script';
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Sorts Mill Goudy", serif;
+  color: #fbecdc;
+  background-color: #fbecdc;
+  font-style: normal;
+  transition: all 0.5s;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

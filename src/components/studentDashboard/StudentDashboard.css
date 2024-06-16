@@ -1,0 +1,85 @@
+.student-dashboard {
+    min-width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #fa5638;
+    font-family: "Sorts Mill Goudy", serif;
+    font-size: 32px;
+    font-weight: 900;
+    background-color: #fbecdc;
+
+
+    .dashboard-content {
+
+        h2 {
+            font-size: 38px;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        img{
+            border: 2px solid #fa5537;
+        }
+
+        .action {
+            width: 100%;
+            height: 100%;
+
+            .change-avt-btn {
+                font-weight: 600;
+                border: 3px solid #fa5638;
+                padding: 10px 40px;
+                margin-right: 20px;
+                background-color: #fbecdc;
+                transition: color 0.4s linear;
+                position: relative;
+                z-index: 51;
+                margin-top: 20px;
+                color: #fa5638;
+                font-weight: 800;
+                font-size: 20px;
+            }
+
+            .change-avt-btn:hover {
+                color: #fbecdc;
+            }
+
+            .change-avt-btn::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: #fa5537;
+                z-index: -1;
+                transition: transform 0.5s;
+                transform-origin: 0 0;
+                transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+                transform: scaleY(0);
+                transition: transform 0.4s linear;
+            }
+
+            .change-avt-btn:hover::before {
+                transform: scaleY(1);
+            }
+
+            input{
+                border: 2px solid #fa5537;
+                margin: 0px 10px;
+                width: 300px;
+                height: 55px;
+                font-weight: 500;
+                font-size: 18px;
+                color: #fa5638;
+            }
+        }
+
+
+    }
+
+}

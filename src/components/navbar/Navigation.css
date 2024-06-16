@@ -1,0 +1,130 @@
+.navigation_bar {
+    background-color: #fbecdc;
+    padding: 10px;
+    width: 100%;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 10vh;
+    min-height: 15vh;
+    font-family: "Sorts Mill Goudy", serif;
+  }
+  
+  .navigation_bar a {
+    color:  #fa5537!important;
+    animation: 0.3s all ease-in;
+  }
+  
+  .navigation_bar a:hover {
+    color: #f7ad56 !important;
+  }
+  
+  .navigation_bar .navbar-brand {
+    font-family: "Sorts Mill Goudy", serif;
+
+    img{
+      position: absolute;
+      transition: all 0.5s;
+      top: 0%;
+      left: 5%;
+      transition: all 0.5s ease-in;
+    }
+
+  }
+
+  .navigation_bar .navbar-brand:hover{
+    img{
+      scale: 1.1;
+    }
+  }
+  
+  .navigation_bar .navbar-nav .nav-link {
+    font-size: 1rem;
+    margin-right: 25px;
+    font-weight: 900;
+    
+  }
+  
+  .navigation_bar .navbar-toggler-icon {
+    border-color: #fa5537;
+  }
+  
+  .navigation_bar .navbar-toggler {
+    background-color: #fbecdc;
+    color: #fa5537;
+    position: absolute;
+    transition: all 0.5s;
+    top: 30%;
+    right: 5%;
+  }
+  
+  .navigation_bar .navbar-collapse {
+    justify-content: center;
+  }
+  .navigation_bar button{
+    color: #fa5638;
+    font-weight: 600;
+    border: 2px solid #fa5638;
+    padding: 8px 20px;
+    border-radius: 25px;
+    background-color: #fbecdc;
+    transition: all 0.5s;
+  }
+
+  .navigation_bar button:hover{
+    background-color: #fa5638;
+    color:  #fbecdc;
+  }
+
+  #basic-navbar-nav {
+    text-align: end;
+    border-radius: 5px;
+    padding: 30px;
+    animation: 0.3s all ease-in;
+    font-weight: 900;
+  }
+
+  @media (max-width: 980px) {
+    #basic-navbar-nav {
+      background-color: #ebeef1;
+    }
+  }
+
+  .dropdown-menu {
+    border: 1px solid #fa5638;
+    z-index: 1;
+  }
+
+  .navigation_bar .login-btn{
+    color: #fa5638;
+    font-weight: 600;
+    border: 2px solid #fa5638;
+    padding: 8px 25px 0px 25px;
+    border-radius: 25px;
+    background-color: #fbecdc;
+    transition: all 0.5s linear;
+    transform: translateY(-20%);
+    text-align: center;
+  }
+
+  .navigation_bar .login-btn:hover{
+    background-color: #fa5638;
+    color:  #fbecdc;
+  }
+
+
+.fas[data-count]:after {
+    position: absolute;
+    right: -0.75em;
+    top: -0.75em;
+    content: attr(data-count);
+    padding: 0.5em;
+    border-radius: 10em;
+    line-height: 0.9em;
+    color: white;
+    background-color: red;
+    text-align: center;
+    min-width: 2em;
+    font: bold 0.4em sans-serif;
+}

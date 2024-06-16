@@ -1,0 +1,354 @@
+.course-page {
+    min-width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #fbecdc;
+    z-index: 0 !important;
+
+    .courses {
+        max-width: 100vw;
+        overflow: hidden;
+    }
+
+    h2 {
+        font-family: "Sorts Mill Goudy", serif;
+        color: #fa5537;
+        font-size: 58px;
+        font-weight: 800;
+        text-align: center;
+    }
+
+    .course {
+        min-width: 100%;
+        border: 2px solid #fa5537;
+        padding: 30px 20px;
+        color: rgb(168, 27, 3);
+        font-weight: 400;
+        font-size: 22px;
+
+        h3 {
+            font-family: "Sorts Mill Goudy", serif;
+            color: #fa5537;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        p {
+            font-family: "Sorts Mill Goudy", serif;
+            color: #fa5537;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        span {
+            color: rgb(134, 143, 8);
+        }
+
+        .check-btn, .enroll-btn {
+            font-weight: 600;
+            border: 3px solid #fa5638;
+            padding: 5px 40px;
+            padding-top: 20px;
+            background-color: #fbecdc;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 0 !important;
+            margin-top: 20px;
+            border-radius: 0 !important;
+
+
+            p {
+                color: #fa5638;
+                font-weight: 800;
+                font-size: 18px;
+                text-decoration: none;
+                transition: color 0.4s linear;
+            }
+
+        }
+
+        .check-btn:hover, .enroll-btn:hover {
+
+            p {
+                color: #fbecdc;
+            }
+        }
+
+        .check-btn::before, .enroll-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fa5537;
+            z-index: -1;
+            transition: transform 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleX(0);
+            transition: transform 0.4s linear;
+        }
+
+        .check-btn:hover::before, .enroll-btn:hover::before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+
+
+/* ----------- Lessons Page--------------- */
+
+.lesson-page {
+    min-width: 100%;
+    min-height: 100vh;
+    background: #fbecdc;
+    overflow: hidden;
+    font-family: "Sorts Mill Goudy", serif;
+    color: #fa5537;
+
+    .new-lesson-model{
+
+        h3{
+            font-family: "Sorts Mill Goudy", serif;
+            color: #fa5537;
+        }
+    }
+
+
+
+    .lessons {
+        border: 1ps solid red;
+
+
+        h1 {
+            font-family: "Sorts Mill Goudy", serif;
+            font-weight: 800;
+            font-size: 58px;
+            color: #fa5537;
+        }
+
+
+        .lesson {
+            border: 2px solid #fa5537;
+            background-color: #fbecdc;
+            padding: 30px 20px;
+            overflow: hidden;
+            position: relative;
+
+            .info-side {
+
+                h3 {
+                    font-family: "Sorts Mill Goudy", serif;
+                    font-weight: 800;
+                    font-size: 28px;
+                    color: #fa5537;
+                }
+
+                p {
+                    font-family: "Sorts Mill Goudy", serif;
+                    font-weight: bold;
+                    color: #fa5537;
+                }
+
+                button {
+                    font-weight: 600;
+                    border: 2px solid #fa5638;
+                    padding: 5px 40px;
+                    padding-top: 20px;
+                    background-color: #fbecdc;
+                    transition: color 0.4s linear;
+                    position: relative;
+                    z-index: 51;
+
+                    p {
+                        color: #fa5638;
+                        font-weight: 500;
+                        font-size: 24px;
+                        text-decoration: none;
+                        transition: color 0.4s linear;
+                    }
+
+                }
+
+                button:hover {
+
+                    p {
+                        color: #fbecdc;
+                    }
+                }
+
+                button::before {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: #fa5537;
+                    z-index: -1;
+                    transition: transform 0.5s;
+                    transform-origin: 0 0;
+                    transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+                }
+
+                .open-material-btn::before {
+                    transform: scaleY(0);
+                    transition: transform 0.4s linear;
+                }
+
+                .open-material-btn:hover::before {
+                    transform: scaleY(1);
+                }
+
+
+
+                .delete-lesson-btn {
+                    margin: 0;
+                    padding: 5px 5px;
+                    background-color: rgb(175, 5, 5);
+                    border-radius: 4px;
+                    color: #fbecdc;
+                    max-width: 50%;
+                    position: absolute;
+                    top: 5px;
+                    left: 5px;
+                    transition: all 0.5s ease-in;
+                }
+
+                .delete-lesson-btn:hover {
+                    color: #fbecdc;
+                    scale: 1.1;
+                }
+            }
+
+            /* video side */
+            .lesson-video {
+                overflow: hidden;
+
+                iframe {
+                    max-width: 100% !important;
+                }
+            }
+        }
+
+    }
+
+    .new-lessons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+
+
+        .add-lesson,
+        .add-quiz,
+        .open-test-btn {
+            font-weight: 600;
+            border: 2px solid #fa5638;
+            padding: 5px 40px;
+            padding-top: 20px;
+            margin: 0px 30px;
+            max-height: 45%;
+            background-color: #fbecdc;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 51;
+
+            p {
+                color: #fa5638;
+                font-weight: 500;
+                font-size: 24px;
+                text-decoration: none;
+                transition: color 0.4s linear;
+            }
+
+        }
+
+        .add-lesson:hover,
+        .add-quiz:hover,
+        .open-test-btn:hover {
+            p {
+                color: #fbecdc;
+            }
+        }
+
+        .add-lesson::before,
+        .add-quiz::before,
+        .open-test-btn::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fa5537;
+            z-index: -1;
+            transition: transform 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleX(0);
+            transition: transform 0.4s linear;
+        }
+
+        .add-lesson:hover::before,
+        .add-quiz:hover::before,
+        .open-test-btn:hover::before {
+            transform: scaleX(1);
+        }
+    }
+}
+
+
+
+.create-lesson{
+    font-weight: 600;
+    border: 3px solid #fa5638;
+    padding: 10px 25px;
+    /* border-radius: 35px; */
+    background-color: #fbecdc;
+    transition: color 0.4s linear;
+    position: relative;
+    z-index: 51;
+    color: #fa5638;
+
+    a {
+        color: #fa5638;
+        font-weight: 500;
+        font-size: 24px;
+        text-decoration: none;
+        transition: color 0.4s linear;
+    }
+
+}
+
+.create-lesson:hover {
+    color: #fbecdc;
+
+    a{
+        color:  #fbecdc;
+    }
+}
+
+.create-lesson::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fa5537;
+    /* border-radius: 35px; */
+    z-index: -1;
+    transition: transform 0.5s;
+    transform-origin: 0 0;
+    transition-timing-function: cubic-bezier(0.5, 1.6,0.4,0.7);
+    transform: scaleY(0);
+    transition: transform 0.4s linear;
+}
+
+
+.create-lesson:hover::before{
+    transform: scaleY(1);
+}

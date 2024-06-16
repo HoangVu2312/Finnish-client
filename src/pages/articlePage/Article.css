@@ -1,0 +1,96 @@
+.article-page {
+    max-width: 100vw;
+    overflow: hidden;
+    object-fit: contain;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: #fbecdc;
+    color: #fa5537;
+}
+
+.articles .article-1{
+    overflow: hidden;
+    width: 100%;
+}
+
+.articles{
+    color: #fa5537;
+
+    h2{
+        font-family: "Sorts Mill Goudy", serif;
+        color: #fa5537;
+        font-size: 58px;
+        font-weight: 800;
+    }
+
+    h3{
+        font-family: "Sorts Mill Goudy", serif;
+        color: #fa5537;
+        font-size: 28px;
+        font-weight: 800;
+    }
+}
+
+.articles .article-1 .article1_img{
+    max-width: 100%; 
+    max-height: 100%;
+}
+
+.title-1{
+    width: 100%;
+    min-height: 100%;
+    padding: 30px 30px;
+
+    button {
+        font-weight: 600;
+        border: 3px solid #fa5638;
+        padding: 10px 40px;
+        background-color: #fbecdc;
+        transition: color 0.4s linear;
+        position: relative;
+        z-index: 51;
+        margin-top: 20px;
+        color: #fa5638;
+
+
+        a{
+            color: #fa5638;
+            font-weight: 500;
+            font-size: 18px;
+            text-decoration: none;
+            transition: color 0.4s linear;
+        }
+
+    }
+
+    button:hover {
+        color:  #fbecdc;
+
+        a{
+            color:  #fbecdc;
+        }
+    }
+
+    button::before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fa5537;
+        z-index: -1;
+        transition: transform 0.5s;
+        transform-origin: 0 0;
+        transition-timing-function: cubic-bezier(0.5, 1.6,0.4,0.7);
+        transform: scaleY(0);
+        transition: transform 0.4s linear;
+    }
+
+    button:hover::before{
+        transform: scaleY(1);
+    }
+
+
+
+}

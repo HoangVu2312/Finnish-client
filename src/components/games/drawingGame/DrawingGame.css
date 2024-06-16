@@ -1,0 +1,281 @@
+.drawing-game-container {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fbecdc;
+    padding: 20px;
+
+
+    /* drawing board */
+    .drawing-board {
+        border: 2px solid #fa5537;
+
+        button {
+            font-weight: 600;
+            border: 3px solid #fa5638;
+            padding: 10px 20px;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 51;
+            color: #fa5638;
+            margin: 10px 10px;
+        }
+
+        button:hover {
+            color: #fbecdc;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fa5537;
+            z-index: -1;
+            transition: transform 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleY(0);
+            transition: transform 0.4s linear;
+        }
+
+        button:hover::before {
+            transform: scaleY(1);
+        }
+    }
+
+    .player-drawing {
+        border: 2px solid #fa5537;
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    /* Dispplay text */
+    .question-section {
+        border: 2px solid #fa5537;
+        margin: 30px 0px;
+        min-width: 100%;
+        min-height: 200px;
+        color: #fa5638;
+        font-size: 22px;
+        padding: 10px;
+
+
+        h3 {
+            font-size: 28px;
+        }
+    }
+
+
+    /*  */
+    .answer-section {
+        min-width: 100%;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fbecdc;
+
+        input {
+            width: 100%;
+            border: 2px solid #fa5638;
+            background-color: #fff;
+            font-size: 22px;
+            height: 50px;
+            border: none;
+        }
+
+        input:focus {
+            border: none;
+            outline: none;
+        }
+
+
+        button {
+            font-weight: 600;
+            border: 3px solid #fa5638;
+            padding: 10px 20px;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 51;
+            color: #fa5638;
+            margin: 10px 10px;
+        }
+
+        button:hover {
+            color: #fbecdc;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fa5537;
+            z-index: -1;
+            transition: transform 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleY(0);
+            transition: transform 0.4s linear;
+        }
+
+        button:hover::before {
+            transform: scaleY(1);
+        }
+    }
+
+    /*  */
+    .reset-button-section {
+        width: 100%;
+        background-color: #fbecdc;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        button {
+            font-weight: 600;
+            border: 3px solid #fa5638;
+            padding: 10px 20px;
+            transition: color 0.4s linear;
+            position: relative;
+            z-index: 51;
+            color: #fa5638;
+            margin: 10px 10px;
+        }
+
+        button:hover {
+            color: #fbecdc;
+        }
+
+        button::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #fa5537;
+            z-index: -1;
+            transition: transform 0.5s;
+            transform-origin: 0 0;
+            transition-timing-function: cubic-bezier(0.5, 1.6, 0.4, 0.7);
+            transform: scaleY(0);
+            transition: transform 0.4s linear;
+        }
+
+        button:hover::before {
+            transform: scaleY(1);
+        }
+
+    }
+}
+
+.tools-board {
+    margin-bottom: 20px;
+    min-width: 100%;
+    background-color: #fbecdc;
+    padding: 0;
+
+}
+
+.tools {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    min-width: 100%;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #fa5537;
+    margin-left: 0;
+
+}
+
+.tools button {
+    background-color: #fbecdc;
+    border: 2px solid #fa5537;
+    color: #fa5537;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+
+.tools button:hover {
+    background-color: #ffb74d;
+    color: #fbecdc;
+}
+
+.tools input[type="color"],
+.tools input[type="range"] {
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.tools input[type="color"]:hover,
+.tools input[type="range"]:hover {
+    background-color: #ffe0b2;
+}
+
+.drawing-board {
+    width: 700px;
+    height: 500px;
+    background-color: #fff;
+    border: 2px solid #333;
+    margin-bottom: 20px;
+}
+
+.players-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    max-height: fit-content;
+    border: 2px solid #fa5537;
+    color: #fa5537;
+    font-family: "Sorts Mill Goudy", serif;
+    overflow: hidden;
+
+
+
+}
+
+.players-list {
+    display: flex;
+    flex-direction: row;
+    margin: 30px 0px;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 100%;
+    min-height: fit-content;
+}
+
+.player-info {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.player-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #155804;
+    margin-right: 10px;
+}

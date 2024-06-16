@@ -1,0 +1,101 @@
+/* WordGame.css */
+.word-game-container{
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: #fbecdc;
+  overflow: hidden;
+}
+
+
+.word-game-wrapper {
+    position: absolute;
+    width: 90%;
+    max-width: 37em;
+    background-color: #ffffff;
+    padding: 7em 3em;
+    transform: translate(-50%, -50%);
+    top: 57%;
+    left: 50%;
+    text-align: center;
+    border-radius: 1em;
+    border: 1px solid #fa5537;
+    z-index: 5;
+  }
+  .word-game-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .word-game-start {
+    font-size: 1.2em;
+    padding: 0.5em 3em;
+    background-color: #ffffff;
+    border: 1px solid #fa5537;
+    outline: none;
+    border-radius: 2em;
+    cursor: pointer;
+    margin: 20px 0px;
+    transition: all 0.4s;
+  }
+
+  .word-game-start:hover{
+    background-color: #fa5537;
+  }
+  .word-game-letter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8em 0.4em;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  .word-game-letter-container button {
+    background-color: #ffffff;
+    border: 2px solid #fa5537;
+    color: #5d0000;
+    outline: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    height: 3em;
+    width: 3em;
+  }
+  .word-game-letter-container .correct {
+    background-color: #fab4b1;
+    color: #ffffff;
+    border: 2px solid #fab4b1;
+  }
+  .word-game-letter-container .incorrect {
+    background-color: #8a8686;
+    color: #ffffff;
+    border: 2px solid #8a8686;
+  }
+  .word-game-hint {
+    margin-bottom: 1em;
+    font-size: 22px;
+  }
+  .word-game-hint span {
+    font-weight: 600;
+  }
+  .word-game-chance-count {
+    margin: 1em 0;
+    position: absolute;
+    top: 0.62em;
+    right: 2em;
+    font-size: 18px;
+    font-weight: 400;
+    color: #5d0000;
+  }
+  .word-game-input {
+    font-weight: 600;
+    margin: 1em 0 2em 0;
+  }
+  .word-game-input-space {
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .word-game-message {
+    margin-top: 1em;
+  }
+  
+  
