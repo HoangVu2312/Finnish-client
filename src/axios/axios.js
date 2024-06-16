@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://finnishwithbella-server.com",
+  baseURL: "https://finnishwithbella-server.onrender.com",
 });
 
 // Add a request interceptor

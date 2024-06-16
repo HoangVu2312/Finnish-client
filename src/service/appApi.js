@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 // Set up hearder to include token everytime send request
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://finnishwithbella-server.com",
+  baseUrl: "https://finnishwithbella-server.onrender.com",
   prepareHeaders: (headers) => {
     const token = localStorage.getItem("token"); // get token from local storage
 
