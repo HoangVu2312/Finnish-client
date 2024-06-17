@@ -67,8 +67,15 @@ const RacingGame = () => {
   };
 
   const resetGame = () => {
+    setPositions([]);
+    setMessage('');
+    setDiceValue(1);
+    setCurrentPlayer(0);
+    setShowQuestion(false);
+    setCurrentQuestion({});
+    setShowSpinWheel(false);
+    setPlayers([]);
     socket.emit('reset-game');
-    window.location.reload(); // reload the component
   };
 
   //

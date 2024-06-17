@@ -54,8 +54,8 @@
 
         /* child component */
         .dice-btn {
-          background-color: #eb3c4a;
-          border: none;
+          background-color: #f15663;
+          border: 2px solid #a1020f;
           outline: none;
           color: #ffffff;
           padding: 15px 0;
