@@ -63,7 +63,7 @@ function Lessons() {
                 <div className="d-flex">
                   <div>
                     <a
-                      href={`http://localhost:4000/material_files/${lesson.material}`}
+                      href={`https://finnishwithbella-server.onrender.com/material_files/${lesson.material}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
