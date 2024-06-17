@@ -4,7 +4,7 @@ import { io } from 'socket.io-client';
 
 const SocketContext = createContext();
 
-const socket = io("https://finnishwithbella-server.onrender.com");
+const socket = io("http://localhost:4000");
 
 const SocketProvider = ({ children }) => {
   return (

@@ -36,7 +36,7 @@ const DrawingGame = () => {
 
         // Let pleyer re-join when re-set the game
         const handleRejoin = (playersToRejoin) => {
-            if (playersToRejoin.some((p) => p._id === user._id)) {
+            if (playersToRejoin.some((p) => p._id === user?._id)) {
                 socket.emit('join-drawing-game', user);
             }
         };
@@ -197,8 +197,16 @@ const DrawingGame = () => {
         socket.emit('submit-guess', { guess, userId }); // Emit socket event to submit guess to server
     };
     const handleReset = (e) => {
-        socket.emit('reset-draw-game'); // Emit socket event to submit guess to server
-        window.location.reload();
+         // Emit socket event to reset the game on the server
+        setPlayers([]); // Clear players list
+        setCurrentPlayer(null); // Clear current player
+        setMessage(''); // Clear message
+        setShowDrawing(false); // Hide drawing
+        setDrawingImage(null); // Clear drawing image
+        setCurrentQuestion(''); // Clear current question
+        setIsWon(false); // Reset win state
+        clearCanvas(); // Clear the canvas
+        socket.emit('reset-draw-game');
     };
 
 
