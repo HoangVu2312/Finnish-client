@@ -91,6 +91,25 @@
       justify-content: center;
       color: #f5f1f1;
       font-family: "Sorts Mill Goudy", serif;
+      position: relative;
+      max-width: 100%;
+      min-height: 250px;
+
+      button{
+        background-color: #f7a8af;
+        border: 2px solid #ff0015;
+        outline: 2px solid #ff0015;
+        border-radius: 4px;
+        padding: 5px 10px;
+        color: #fcfffc;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      button:hover{
+        background-color: #ff0015;
+      }
     }
 
 

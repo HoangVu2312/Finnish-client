@@ -90,8 +90,11 @@ const RacingGame = () => {
     socket.emit('reset-game');
   };
 
-  //
+  //check curent player
   const playerIndex = players.findIndex((p) => p._id === user._id)
+
+    // Check if all players have won => show reset btn
+    const allPlayersWon = positions.every(position => position > 65);
 
   return (
     <div className='game-container'>
@@ -116,6 +119,7 @@ const RacingGame = () => {
                 playerIndex={playerIndex}
               />
             </div>
+
           </Col>
           <Modal show={showSpinWheel} onHide={() => setShowSpinWheel(false)} style={{ backgroundColor: "#ffffff3b" }}>
             <SpinWheel onSpinResult={handleSpinResult} currentPlayer={currentPlayer} playerIndex={playerIndex} />
@@ -128,7 +132,17 @@ const RacingGame = () => {
             </Modal.Body>
           </Modal>
           <Col md={4} className='right'>
-            <h4>{message}</h4>
+            {/* reset btn */}
+            {!allPlayersWon ? (
+              <button className='mini-reset m-4' onClick={resetGame}>Reset</button>
+
+            ) : (
+              <></>
+            )}
+            <br />
+            <div className='text-center'>
+              <h4>{message}</h4>
+            </div>
           </Col>
         </Row>
       </Row>
