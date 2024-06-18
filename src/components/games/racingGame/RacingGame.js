@@ -23,6 +23,15 @@ const RacingGame = () => {
   const [players, setPlayers] = useState([]);
 
   useEffect(() => {
+
+    // Let pleyer re-join when re-set the game
+    const handleRejoin = (playersToRejoin) => {
+      if (playersToRejoin.some((p) => p._id === user?._id)) {
+        socket.emit('join-game', user);
+      }
+    };
+
+
     socket.emit('join-game', user);
 
     socket.on('game-state', (state) => {
@@ -47,8 +56,11 @@ const RacingGame = () => {
       }
     });
 
+    socket.on('force-rejoin', handleRejoin); //listen re-join emit
+
     return () => {
       socket.off('game-state');
+      socket.off('force-rejoin', handleRejoin);
     };
   }, [socket, user]);
 
@@ -79,7 +91,7 @@ const RacingGame = () => {
   };
 
   //
-  const playerIndex= players.findIndex((p) => p._id === user._id)
+  const playerIndex = players.findIndex((p) => p._id === user._id)
 
   return (
     <div className='game-container'>
@@ -106,7 +118,7 @@ const RacingGame = () => {
             </div>
           </Col>
           <Modal show={showSpinWheel} onHide={() => setShowSpinWheel(false)} style={{ backgroundColor: "#ffffff3b" }}>
-            <SpinWheel onSpinResult={handleSpinResult} currentPlayer={currentPlayer} playerIndex={playerIndex}/>
+            <SpinWheel onSpinResult={handleSpinResult} currentPlayer={currentPlayer} playerIndex={playerIndex} />
           </Modal>
           <Modal show={showQuestion} onHide={() => setShowQuestion(false)} style={{ backgroundColor: "#ffffff3b" }}>
             <Modal.Body>
