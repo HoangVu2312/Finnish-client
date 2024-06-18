@@ -21,7 +21,7 @@ const DicePlayers = ({ players, positions }) => {
       {playersWithPositions.map((player, index) => (
         <img
           key={index}
-          src={player.avatar.url}
+          src={player?.avatar.url}
           alt="Player Avatar"
           className={`player-avatar ${player.position > 65 ? 'winner' : ''}`}
           style={{
