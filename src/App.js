@@ -69,7 +69,7 @@ function AppContent() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="">
         <Navigation />
         <Routes>
           <Route index path="*" element={<Home />} />
