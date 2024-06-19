@@ -69,7 +69,7 @@ function AppContent() {
 
   return (
     <>
-      <BrowserRouter basename="">
+      <BrowserRouter basename="https://github.com/HoangVu2312/Finnish-client">
         <Navigation />
         <Routes>
           <Route index path="*" element={<Home />} />
