@@ -143,9 +143,9 @@ function Home() {
                 <h1>MY STORY</h1>
               </div>
               <div className="text-center">
-                <h2>MINDSET</h2><br/>
-                <h2>EXPERIENCE</h2><br/>
-                <h2>EXPLORING</h2><br/>
+                <h2>MINDSET</h2><br />
+                <h2>EXPERIENCE</h2><br />
+                <h2>EXPLORING</h2><br />
               </div>
 
               <div className="text-center">
@@ -241,7 +241,7 @@ function Home() {
         <Row className="all-comments">
           <Col className="comment" md={3}>
             <div className="client-avt">
-            <Image className="client-avt-img" src={"https://th.bing.com/th/id/OIP.02dtZ4_CsIrBV6n7PjIMLQHaHa?rs=1&pid=ImgDetMain"} alt="cmt" />
+              <Image className="client-avt-img" src={"https://th.bing.com/th/id/OIP.02dtZ4_CsIrBV6n7PjIMLQHaHa?rs=1&pid=ImgDetMain"} alt="cmt" />
             </div>
             <div className="client-comment">
               <p>"Mình đã ở Phần lan được 2 năm nhưng vẫn chưa thể giao tiếp tốt, Bella đã giúp mình tự tin hơn rất nhiều trong giao tiếp hàng ngày."</p>
@@ -259,7 +259,7 @@ function Home() {
           </Col>
           <Col className="comment" md={3}>
             <div className="client-avt">
-            <Image className="client-avt-img" src={"https://d162s0cet9s8p8.cloudfront.net/articles/images/Connor_Daniels_Reading_for_College_Classes_Square_600x600-146.jpg"} alt="cmt" />
+              <Image className="client-avt-img" src={"https://d162s0cet9s8p8.cloudfront.net/articles/images/Connor_Daniels_Reading_for_College_Classes_Square_600x600-146.jpg"} alt="cmt" />
             </div>
             <div className="client-comment">
               <p>"Cô Bella đã dạy mình giao tiếp cơ bản và giúp mình đậu phỏng vấn một trường cấp 3 ở Phần Lan."</p>
@@ -311,16 +311,20 @@ function Home() {
         onHide={handleClose}
         centered
       >
-        <video
-          src={MainVideo}
-          type="video/mp4"
-          controls
-          autoPlay="true"
-          loop
-          className="main-bio-video"
-        ></video>
+        <div className="embed-responsive embed-responsive-16by9">
+          <iframe
+            className="embed-responsive-item main-bio-video"
+            src="https://www.youtube.com/embed/bbxAnFKxbA4"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{minWidth:"100%", minHeight:"50vh"}}
+          ></iframe>
+        </div>
         <div className="video-filter"></div>
       </Modal>
+
 
 
     </div>
